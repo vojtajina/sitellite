@@ -74,6 +74,14 @@ class CmsEditSitellite_pageForm extends MailForm {
 					sugg_id = sugg_id.replace (/[óòôöø]/g, \'o\');
 					sugg_id = sugg_id.replace (/[úùûüů]/g, \'u\');
 					sugg_id = sugg_id.replace (/[ÿ]/g, \'y\');
+					sugg_id = sugg_id.replace (/[ě]/g, \'e\');
+					sugg_id = sugg_id.replace (/[š]/g, \'s\');
+					sugg_id = sugg_id.replace (/[č]/g, \'c\');
+					sugg_id = sugg_id.replace (/[ř]/g, \'r\');
+					sugg_id = sugg_id.replace (/[ž]/g, \'z\');
+					sugg_id = sugg_id.replace (/[ý]/g, \'y\');
+					sugg_id = sugg_id.replace (/[á]/g, \'a\');
+					sugg_id = sugg_id.replace (/[í]/g, \'i\');
 					sugg_id = sugg_id.replace (/^[^a-z0-9_-]+/g, \'\');
 					sugg_id = sugg_id.replace (/[^a-z0-9_-]+$/g, \'\');
 					sugg_id = sugg_id.replace (/[^a-z0-9_-]+/g, \'-\');
