@@ -52,21 +52,22 @@ class CmsAddSitellite_pageForm extends MailForm {
 				if (f.elements[\'id\'].value.length == 0) {
 					sugg_id = f.elements[\'title\'].value.toLowerCase ();
 					sugg_id = sugg_id.replace (/[àáâäå]/g, \'a\');
-					sugg_id = sugg_id.replace (/[ç]/g, \'c\');
-					sugg_id = sugg_id.replace (/[éèêë]/g, \'e\');
+					sugg_id = sugg_id.replace (/[çč]/g, \'c\');
+					sugg_id = sugg_id.replace (/[éèêëě]/g, \'e\');
 					sugg_id = sugg_id.replace (/[íìîï]/g, \'i\');
 					sugg_id = sugg_id.replace (/[ñ]/g, \'n\');
 					sugg_id = sugg_id.replace (/[óòôöø]/g, \'o\');
 					sugg_id = sugg_id.replace (/[úùûüů]/g, \'u\');
 					sugg_id = sugg_id.replace (/[ÿ]/g, \'y\');
-					sugg_id = sugg_id.replace (/[ě]/g, \'e\');
 					sugg_id = sugg_id.replace (/[š]/g, \'s\');
-					sugg_id = sugg_id.replace (/[č]/g, \'c\');
 					sugg_id = sugg_id.replace (/[ř]/g, \'r\');
 					sugg_id = sugg_id.replace (/[ž]/g, \'z\');
 					sugg_id = sugg_id.replace (/[ý]/g, \'y\');
 					sugg_id = sugg_id.replace (/[á]/g, \'a\');
+					sugg_id = sugg_id.replace (/[ť]/g, \'t\');
 					sugg_id = sugg_id.replace (/[í]/g, \'i\');
+					sugg_id = sugg_id.replace (/[ď]/g, \'d\');
+					sugg_id = sugg_id.replace (/[ň]/g, \'n\');
 					sugg_id = sugg_id.replace (/^[^a-z0-9_-]+/g, \'\');
 					sugg_id = sugg_id.replace (/[^a-z0-9_-]+$/g, \'\');
 					sugg_id = sugg_id.replace (/[^a-z0-9_-]+/g, \'-\');
