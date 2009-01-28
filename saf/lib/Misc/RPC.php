@@ -138,10 +138,11 @@ function rpc_serialize ($val) {
  *
  * @param object reference
  * @param array hash
+ * @param boolean serialize data ? 
  * @return string
  * @package Misc
  */
-function rpc_handle (&$obj, $parameters) {
+function rpc_handle (&$obj, $parameters,  $serialize = true) {
 	// determine the method to call
 	$method = $parameters['method'];
 	if (! $method) {
@@ -158,20 +159,19 @@ function rpc_handle (&$obj, $parameters) {
 	unset ($parameters['_rewrite_sticky']);
 
 	if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-		$res = rpc_serialize (
-			call_user_func_array (
+		$res = call_user_func_array (
 				array (&$obj, $method),
 				$parameters
-			)
-		);
+  		);
 	} else {
-		$res = rpc_serialize (
-			call_user_func_array (
+		$res = call_user_func_array (
 				array (&$obj, $method),
 				$_POST
-			)
-		);
+		  );
 	}
+	
+	if ($serialize) $res = rpc_serialize($res);
+	
 	if (strstr ($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') !== false && extension_loaded ('zlib')) {
 		header ('Content-Encoding: gzip');
 		$res = gzencode ($res, 9);
